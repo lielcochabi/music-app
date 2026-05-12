@@ -1,0 +1,57 @@
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: #000000;
+  color: white;
+  padding: 10px 20px;
+  z-index: 9999;
+  gap: 20px;
+}
+
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.track-info img {
+  height: 40px;
+  width: 40px;
+  border-radius: 4px;
+}
+
+.track-details h4,
+.track-details p {
+  margin: 0;
+  font-size: 0.85em;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.controls button {
+  background: #66bb6a;
+  border: none;
+  color: white;
+  font-size: 14px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.controls button:hover {
+  background: #388e3c;
+}
+
+.controls button.playing {
+  background: #ef5350;
+}

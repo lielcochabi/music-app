@@ -1,0 +1,56 @@
+.songs-view {
+  display: grid;
+  gap: 20px;
+  width: 60vw;
+  margin: 0 auto;
+}
+
+.playlist-title {
+  color: #1db954;
+  font-weight: bold;
+  text-align: center;
+}
+
+.songs-error {
+  color: #ef5350;
+  text-align: center;
+}
+
+.songs-empty {
+  color: #b3b3b3;
+  text-align: center;
+}
+
+.song-card {
+  display: flex;
+  align-items: center;
+  background-color: #2d2d2d;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  gap: 16px;
+}
+
+.song-card:hover {
+  background-color: #3a3a3a;
+}
+
+.song-image {
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+
+.song-name {
+  font-weight: bold;
+  color: #fff;
+  flex: 1;
+}
+
+.song-artist {
+  color: #b3b3b3;
+  font-size: 0.9em;
+  white-space: nowrap;
+}

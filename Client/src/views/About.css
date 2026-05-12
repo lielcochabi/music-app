@@ -1,0 +1,19 @@
+.about-page {
+  color: white;
+  background-color: #191414;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-page h1 {
+  color: #1db954;
+}
+
+.about-page p {
+  color: white;
+}

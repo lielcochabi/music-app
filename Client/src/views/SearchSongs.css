@@ -1,0 +1,60 @@
+.search-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+  color: #1db954;
+}
+
+.songs-table,
+.playlists-table {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  color: white;
+}
+
+th {
+  color: #1db954;
+}
+
+tbody tr {
+  cursor: pointer;
+}
+
+tbody tr:hover td {
+  background-color: #1a1a1a;
+}
+
+.song-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+}
+
+.glow td {
+  box-shadow: inset 0 0 8px #1db954;
+}
+
+.status-msg {
+  color: #b3b3b3;
+  font-size: 0.9em;
+  margin: 4px 0 8px;
+}
+
+.hint {
+  color: #b3b3b3;
+  font-size: 0.85em;
+  margin-bottom: 10px;
+}
