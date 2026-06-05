@@ -8,8 +8,11 @@
 
 # Use esbuild so dependencies (e.g. axios v1, whose conditional exports the
 # legacy bundler fails to resolve) are bundled into the function.
+# yt-search/cheerio use dynamic requires that esbuild cannot inline, so mark
+# them external and let Netlify trace and include them as real node_modules.
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["yt-search", "cheerio"]
 
 # Route all /api/* calls to the serverless function
 [[redirects]]
