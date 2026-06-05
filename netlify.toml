@@ -6,6 +6,11 @@
 [build.environment]
   NODE_VERSION = "20"
 
+# Use esbuild so dependencies (e.g. axios v1, whose conditional exports the
+# legacy bundler fails to resolve) are bundled into the function.
+[functions]
+  node_bundler = "esbuild"
+
 # Route all /api/* calls to the serverless function
 [[redirects]]
   from = "/api/*"
