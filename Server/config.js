@@ -1,13 +1,21 @@
 import fs from "fs";
 import path from "path";
-import { fileURLToPath } from "url";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const envPath = path.resolve(__dirname, "../env.json");
+// env.json is only used for local development; in production (Netlify
+// serverless) config comes from process.env. We intentionally avoid
+// import.meta.url / fileURLToPath here because the bundler compiles this ESM
+// module to CommonJS, where import.meta.url is undefined and would crash the
+// function at load time. Resolve from the working directory instead and guard
+// against any read/parse error so a missing env.json never breaks startup.
+const envPath = path.resolve(process.cwd(), "env.json");
 
 let fileEnv = {};
-if (fs.existsSync(envPath)) {
-  fileEnv = JSON.parse(fs.readFileSync(envPath, "utf-8"));
+try {
+  if (fs.existsSync(envPath)) {
+    fileEnv = JSON.parse(fs.readFileSync(envPath, "utf-8"));
+  }
+} catch (err) {
+  console.warn(`Could not read ${envPath}: ${err.message}`);
 }
 
 const get = (key) => process.env[key] || fileEnv[key];
