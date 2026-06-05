@@ -14,6 +14,11 @@
   node_bundler = "esbuild"
   external_node_modules = ["yt-search", "cheerio"]
 
+# Run the keepalive function once a day so the Atlas M0 cluster never reaches
+# its ~60-day idle-pause threshold. (Cron is in UTC.)
+[functions."keepalive"]
+  schedule = "@daily"
+
 # Route all /api/* calls to the serverless function
 [[redirects]]
   from = "/api/*"
